@@ -222,7 +222,7 @@
                                     tone_string += "<ul>";
                                     i['tones'].forEach(function(tone, ind) {
 
-                                        if (tone['score'] >= 0.75) tones_count[tone['tone_name']] += 1;
+                                        if (tone['score'] >= 0.75) tones_count[tone['tone_name'].toLowerCase()] += 1;
 
                                         tone_string += "<li>";
                                         tone_string += tone['tone_name'];
@@ -263,6 +263,8 @@
 
                     $(".values_summary").text(values['high']);
                     $(".values_low_summary").text(values['low']);
+                    
+
 
                     var data = google.visualization.arrayToDataTable([
                         ['Tone', 'Occurences'],
